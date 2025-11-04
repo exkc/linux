@@ -271,6 +271,9 @@ static int adreno_probe(struct platform_device *pdev)
 	if (of_device_is_compatible(pdev->dev.of_node, "amd,imageon"))
 		adreno_device_register_headless();
 
+	if (of_device_is_compatible(pdev->dev.of_node, "qcom,adreno-msm8909-hack"))
+		adreno_device_register_headless();
+
 	return 0;
 }
 
@@ -285,6 +288,7 @@ static void adreno_shutdown(struct platform_device *pdev)
 }
 
 static const struct of_device_id dt_match[] = {
+	{ .compatible = "qcom,adreno-msm8909-hack" },
 	{ .compatible = "qcom,adreno" },
 	{ .compatible = "qcom,adreno-3xx" },
 	/* for compatibility with imx5 gpu: */

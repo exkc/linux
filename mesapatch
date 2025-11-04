@@ -1,0 +1,25 @@
+From dc6e6d7a2bedcc34d59e76f08ca4362369438f32 Mon Sep 17 00:00:00 2028
+From: exkc <exkc@exkc.moe>
+Date: Tue, 28 May 2024 14:15:09 -0700
+Subject: [PATCH] freedreno: Enable Adreno 304
+
+---
+ src/freedreno/common/freedreno_devices.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/freedreno/common/freedreno_devices.py b/src/freedreno/common/freedreno_devices.py
+index 2d38d01862b7f..b3ad9fbc4b9f0 100644
+--- a/src/freedreno/common/freedreno_devices.py
++++ b/src/freedreno/common/freedreno_devices.py
+@@ -217,6 +217,7 @@ add_gpus([
+         GPUId(320),
+         GPUId(330),
+         GPUId(chip_id=0x03000512, name="FD305B"),
+         GPUId(chip_id=0x03000620, name="FD306A"),
++        GPUId(chip_id=0x03000400, name="QwQ_GPU"),
+     ], GPUInfo(
+         CHIP.A3XX,
+         gmem_align_w = 32,  gmem_align_h = 32,
+-- 
+GitLab
+

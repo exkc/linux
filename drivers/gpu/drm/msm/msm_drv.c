@@ -111,16 +111,7 @@ static int msm_drm_uninit(struct device *dev)
 
 bool msm_use_mmu(struct drm_device *dev)
 {
-	struct msm_drm_private *priv = dev->dev_private;
-
-	/*
-	 * a2xx comes with its own MMU
-	 * On other platforms IOMMU can be declared specified either for the
-	 * MDP/DPU device or for its parent, MDSS device.
-	 */
-	return priv->is_a2xx ||
-		device_iommu_mapped(dev->dev) ||
-		device_iommu_mapped(dev->dev->parent);
+	return 1;
 }
 
 static int msm_init_vram(struct drm_device *dev)
@@ -1014,6 +1005,7 @@ bool msm_disp_drv_should_bind(struct device *dev, bool dpu_driver)
  * as components.
  */
 static const struct of_device_id msm_gpu_match[] = {
+	{ .compatible = "qcom,adreno-msm8909-hack" },
 	{ .compatible = "qcom,adreno" },
 	{ .compatible = "qcom,adreno-3xx" },
 	{ .compatible = "amd,imageon" },
