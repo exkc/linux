@@ -433,14 +433,14 @@
 
 			video-decoder {
 				compatible = "venus-decoder";
-				clocks = <&gcc VENUS0_CORE0_VCODEC0_CLK>;
+				clocks = <&gcc GCC_VENUS0_CORE0_VCODEC0_CLK>;
 				clock-names = "core";
 				power-domains = <&gcc VENUS_CORE0_GDSC>;
 			};
 
 			video-encoder {
 				compatible = "venus-encoder";
-				clocks = <&gcc VENUS0_CORE0_VCODEC0_CLK>;
+				clocks = <&gcc GCC_VENUS0_CORE0_VCODEC0_CLK>;
 				clock-names = "core";
 				power-domains = <&gcc VENUS_CORE0_GDSC>;
 
