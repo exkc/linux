@@ -240,13 +240,10 @@
 			reg = <0x8dc00000 0x100000>;
 			no-map;
 		};
-
-		venus_mem: venus {
-			size = <0x0 0x500000>;
-			alignment = <0x0 0x100000>;
-			alloc-ranges = <0x0 0x86800000 0x0 0x8000000>;
+		venus_mem: venus@90000000 {
+			reg = <0x0 0x90000000 0 0x500000>;
 			no-map;
-		};
+		};	
 	};
 
 	smd {
