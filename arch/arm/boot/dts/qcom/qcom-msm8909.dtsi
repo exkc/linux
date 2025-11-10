@@ -423,8 +423,9 @@
 			compatible = "qcom,msm8909-venus";
 			reg = <0x01d00000 0xff000>;
 			interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
-			power-domains = <&gcc VENUS_GDSC>;
+			power-domains = <&gcc VENUS_GDSC>,<&gcc VENUS_CORE0_GDSC>;
 			clocks = <&gcc GCC_VENUS0_VCODEC0_CLK>,
+			         <&gcc GCC_VENUS0_CORE0_VCODEC0_CLK>,
 				 <&gcc GCC_VENUS0_AHB_CLK>,
 				 <&gcc GCC_VENUS0_AXI_CLK>;
 			clock-names = "core", "iface", "bus";
