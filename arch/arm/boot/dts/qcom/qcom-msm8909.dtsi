@@ -428,7 +428,7 @@
 			         <&gcc GCC_VENUS0_CORE0_VCODEC0_CLK>,
 				 <&gcc GCC_VENUS0_AHB_CLK>,
 				 <&gcc GCC_VENUS0_AXI_CLK>;
-			clock-names = "core", "iface", "bus";
+			clock-names = "core", "core0","iface", "bus";
 			iommus = <&apps_iommu 5>;
 			memory-region = <&venus_mem>;
 
