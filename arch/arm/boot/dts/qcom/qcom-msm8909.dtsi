@@ -241,7 +241,7 @@
 			no-map;
 		};
 		venus_mem: venus@90000000 {
-			reg = <0x90000000 0x100000>;
+			reg = <0x90000000 0x500000>;
 			no-map;
 		};
 	};
@@ -433,10 +433,17 @@
 
 			video-decoder {
 				compatible = "venus-decoder";
+				clocks = <&gcc VENUS0_CORE0_VCODEC0_CLK>;
+				clock-names = "core";
+				power-domains = <&gcc VENUS_CORE0_GDSC>;
 			};
 
 			video-encoder {
 				compatible = "venus-encoder";
+				clocks = <&gcc VENUS0_CORE0_VCODEC0_CLK>;
+				clock-names = "core";
+				power-domains = <&gcc VENUS_CORE0_GDSC>;
+
 			};
 		};
 
