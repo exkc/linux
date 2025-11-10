@@ -240,8 +240,8 @@
 			reg = <0x8dc00000 0x100000>;
 			no-map;
 		};
-		venus_mem: venus@90000000 {
-			reg = <0x90000000 0x500000>;
+		venus_mem: venus@8e500000 {
+			reg = <0x8e500000 0x500000>;
 			no-map;
 		};
 	};
