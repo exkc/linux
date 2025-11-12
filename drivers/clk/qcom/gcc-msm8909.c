@@ -2463,7 +2463,7 @@ static struct gdsc venus_gdsc = {
 	.pd = {
 		.name = "venus_gdsc",
 	},
-	.parent = &venus_gdsc.pd,
+	.parent = &venus_core0_gdsc.pd,
 	.pwrsts = PWRSTS_OFF_ON,
 };
 
