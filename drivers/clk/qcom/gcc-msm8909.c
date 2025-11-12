@@ -2401,8 +2401,7 @@ static struct clk_branch gcc_venus0_axi_clk = {
 };
 
 static struct clk_branch gcc_venus0_core0_vcodec0_clk = {
-	//.halt_reg = 0x4c02c,
-	.halt_reg = 0x4c01c,
+	.halt_reg = 0x4c02c,
 	.halt_check = BRANCH_HALT,
 	.clkr = {
 		.enable_reg = 0x4c02c,
@@ -2464,6 +2463,7 @@ static struct gdsc venus_gdsc = {
 	.pd = {
 		.name = "venus_gdsc",
 	},
+	.parent = &venus_gdsc.pd,
 	.pwrsts = PWRSTS_OFF_ON,
 };
 
@@ -2474,7 +2474,6 @@ static struct gdsc venus_core0_gdsc = {
 	.pd = {
 		.name = "venus_core0_gdsc",
 	},
-	.parent = &venus_gdsc.pd,
 	.flags = HW_CTRL,
 	.pwrsts = PWRSTS_OFF_ON,
 };
