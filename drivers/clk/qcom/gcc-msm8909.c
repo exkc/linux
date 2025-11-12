@@ -2472,8 +2472,8 @@ static struct gdsc venus_core0_gdsc = {
 	.cxc_count = 1,
 	.pd = {
 		.name = "venus_core0_gdsc",
-		.parent = &venus_gdsc.pd,
 	},
+	.parent = &venus_gdsc.pd,
 	.flags = HW_CTRL,
 	.pwrsts = PWRSTS_OFF_ON,
 };
