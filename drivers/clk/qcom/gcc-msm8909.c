@@ -2456,17 +2456,6 @@ static struct gdsc oxili_gdsc = {
 	.pwrsts = PWRSTS_OFF_ON,
 };
 
-static struct gdsc venus_gdsc = {
-	.gdscr = 0x4c018,
-	.cxcs = (unsigned int []) { 0x4c024, 0x4c01c },
-	.cxc_count = 2,
-	.pd = {
-		.name = "venus_gdsc",
-	},
-	.parent = &venus_core0_gdsc.pd,
-	.pwrsts = PWRSTS_OFF_ON,
-};
-
 static struct gdsc venus_core0_gdsc = {
 	.gdscr = 0x4c028,
 	.cxcs = (unsigned int []) { 0x4c02c },
@@ -2475,6 +2464,17 @@ static struct gdsc venus_core0_gdsc = {
 		.name = "venus_core0_gdsc",
 	},
 	.flags = HW_CTRL,
+	.pwrsts = PWRSTS_OFF_ON,
+};
+
+static struct gdsc venus_gdsc = {
+	.gdscr = 0x4c018,
+	.cxcs = (unsigned int []) { 0x4c024, 0x4c01c },
+	.cxc_count = 2,
+	.pd = {
+		.name = "venus_gdsc",
+	},
+	.parent = &venus_core0_gdsc.pd,
 	.pwrsts = PWRSTS_OFF_ON,
 };
 
