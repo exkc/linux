@@ -43,6 +43,25 @@
 		};
 	};
 
+	spi-1 {
+		compatible = "spi-gpio";
+		//pinctrl-names = "default";
+		//pinctrl-0 = <&pinctrl_spi4>;
+		sck-gpios = <&tlmm 4 GPIO_ACTIVE_HIGH>;
+		miso-gpios = <&tlmm 5 GPIO_ACTIVE_HIGH>;
+		mosi-gpios = <&tlmm 10 GPIO_ACTIVE_HIGH>;
+		cs-gpios = <&tlmm 11 GPIO_ACTIVE_LOW>;
+		num-chipselects = <0>;
+		mmc@0 {
+			compatible = "mmc-spi-slot";
+			reg = <0>;
+			voltage-ranges = <1800 1800>;
+			spi-max-frequency = <18000000>;
+			broken-cd;
+		};
+
+	};
+
 	backlight: backlight {
 		compatible = "pwm-backlight";
 		pwms = <&pm8909_pwm 0 100000>;
@@ -168,16 +187,6 @@
 
 		pinctrl-0 = <&touchscreen_default>;
 		pinctrl-names = "default";
-	};
-};
-
-&blsp_i2c6 {
-	status = "okay";
-
-	fuel-gauge@55 {
-		compatible = "ti,bq27500";
-		reg = <0x55>;
-		monitored-battery = <&battery>;
 	};
 };
 
