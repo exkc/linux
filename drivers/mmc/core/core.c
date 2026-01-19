@@ -1133,8 +1133,8 @@ u32 mmc_select_voltage(struct mmc_host *host, u32 ocr)
 
 	ocr &= host->ocr_avail;
 	if (!ocr) {
-		dev_warn(mmc_dev(host), "no support for card's volts\n");
-		return 0;
+		//dev_warn(mmc_dev(host), "no support for card's volts\n");
+		ocr = host->ios.vdd;
 	}
 
 	if (!mmc_card_uhs2(host) && host->caps2 & MMC_CAP2_FULL_PWR_CYCLE) {
